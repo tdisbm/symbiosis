@@ -1,0 +1,37 @@
+{
+  "handshake" : {
+    "entity-identifier" : "type",
+    "entity-room" : "email"
+  },
+
+  "nodes" : {
+    "device" : {
+      "entity" : "/files/device.js",
+      "properties": ["deviceData"]
+    },
+    "user" : {
+      "entity" : "/files/user.js"
+    }
+  },
+
+  "environments" : {
+    "device-client" : {
+      "nodes" : ["user", "device"],
+      "streams" : {
+        "device-to-user" : {
+          "to" : ["user"],
+          "properties" : ["deviceData"],
+          "socket-events" : ["message"],
+          "propagation" : {
+            "type" : "interval",
+            "timeout" : 3000,
+            "condition" : {
+              "start-on" : "nodes.user.hasSockets()",
+              "stop-on"  : "!nodes.user.hasSockets()"
+            }
+          }
+        }
+      }
+    }
+  }
+}

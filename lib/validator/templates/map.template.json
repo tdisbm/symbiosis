@@ -1,0 +1,139 @@
+{
+  "handshake" : {
+    "entity-identifier" : {
+      "validators": {
+        "required": true,
+        "unique": {
+          "key" : "handshake"
+        },
+        "not-null": true,
+        "not-empty": true,
+        "constructor": "String"
+      }
+    },
+    "entity-room" : {
+      "validators": {
+        "required": true,
+        "unique": {
+          "key" : "handshake"
+        },
+        "not-null": true,
+        "not-empty": true,
+        "constructor": "String"
+      }
+    }
+  },
+
+  "nodes" : {
+    "validators": {
+      "required" : true
+    },
+    "items": {
+      "entity" : {
+        "validators": {
+          "required" : true,
+          "unique"  : {
+            "key" : "entity"
+          },
+          "file-path" : true,
+          "not-null" : true,
+          "not-empty" : true,
+          "constructor" : "String"
+        }
+      },
+      "properties" : {
+        "validators": {
+          "constructor" : "Array",
+          "unique" : true
+        }
+      }
+    }
+  },
+
+  "environments" : {
+    "validators": {
+      "required": true
+    },
+    "items": {
+      "nodes" : {
+        "validators": {
+          "required" : true,
+          "constructor" : "Array",
+          "min-length" : 1
+        }
+      },
+      "streams" : {
+        "items" : {
+          "validators": {
+            "required" : true
+          },
+          "to" : {
+            "validators": {
+              "required" : true,
+              "constructor" : "Array",
+              "min-length" : 1
+            }
+          },
+          "properties" : {
+            "validators": {
+              "constructor" : "Array",
+              "min-length": 1
+            }
+          },
+          "socket-events" : {
+            "validators": {
+              "required" : true,
+              "constructor": "Array",
+              "min-length": 1
+            }
+          },
+          "propagation" : {
+            "validators": {
+              "required": true,
+              "constructor": "Object",
+              "max-length": 1,
+              "switch" : {
+                "type" : {
+                  "interval" : {
+                    "timeout" : {
+                      "validators": {
+                        "required" : true,
+                        "constructor" : "Number"
+                      }
+                    },
+                    "condition" : {
+                      "validators": {
+                        "required" : true
+                      },
+                      "start-on" : {
+                        "validators": {
+                          "required" : true,
+                          "constructor" : "String"
+                        }
+                      },
+                      "stop-on" : {
+                        "validators": {
+                          "required" : true,
+                          "constructor" : "String"
+                        }
+                      }
+                    }
+                  },
+                  "onchange" : {},
+                  "onset" : {}
+                }
+              }
+            },
+            "type" : {
+              "validators": {
+                "required" : true,
+                "constructor" : "String",
+                "admit": ["interval", "onchange", "onset"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
