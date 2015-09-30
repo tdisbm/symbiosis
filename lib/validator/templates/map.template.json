@@ -1,7 +1,7 @@
 {
   "handshake" : {
     "entity-identifier" : {
-      "validators": {
+      "constraints": {
         "required": true,
         "unique": {
           "key" : "handshake"
@@ -12,7 +12,7 @@
       }
     },
     "entity-room" : {
-      "validators": {
+      "constraints": {
         "required": true,
         "unique": {
           "key" : "handshake"
@@ -25,12 +25,12 @@
   },
 
   "nodes" : {
-    "validators": {
+    "constraints": {
       "required" : true
     },
     "items": {
       "entity" : {
-        "validators": {
+        "constraints": {
           "required" : true,
           "unique"  : {
             "key" : "entity"
@@ -42,7 +42,7 @@
         }
       },
       "properties" : {
-        "validators": {
+        "constraints": {
           "constructor" : "Array",
           "unique" : true
         }
@@ -51,12 +51,12 @@
   },
 
   "environments" : {
-    "validators": {
+    "constraints": {
       "required": true
     },
     "items": {
       "nodes" : {
-        "validators": {
+        "constraints": {
           "required" : true,
           "constructor" : "Array",
           "min-length" : 1
@@ -64,31 +64,31 @@
       },
       "streams" : {
         "items" : {
-          "validators": {
+          "constraints": {
             "required" : true
           },
           "to" : {
-            "validators": {
+            "constraints": {
               "required" : true,
               "constructor" : "Array",
               "min-length" : 1
             }
           },
           "properties" : {
-            "validators": {
+            "constraints": {
               "constructor" : "Array",
               "min-length": 1
             }
           },
           "socket-events" : {
-            "validators": {
+            "constraints": {
               "required" : true,
               "constructor": "Array",
               "min-length": 1
             }
           },
           "propagation" : {
-            "validators": {
+            "constraints": {
               "required": true,
               "constructor": "Object",
               "max-length": 1,
@@ -96,23 +96,23 @@
                 "type" : {
                   "interval" : {
                     "timeout" : {
-                      "validators": {
+                      "constraints": {
                         "required" : true,
                         "constructor" : "Number"
                       }
                     },
                     "condition" : {
-                      "validators": {
+                      "constraints": {
                         "required" : true
                       },
                       "start-on" : {
-                        "validators": {
+                        "constraints": {
                           "required" : true,
                           "constructor" : "String"
                         }
                       },
                       "stop-on" : {
-                        "validators": {
+                        "constraints": {
                           "required" : true,
                           "constructor" : "String"
                         }
@@ -125,7 +125,7 @@
               }
             },
             "type" : {
-              "validators": {
+              "constraints": {
                 "required" : true,
                 "constructor" : "String",
                 "admit": ["interval", "onchange", "onset"]

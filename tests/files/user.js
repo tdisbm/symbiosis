@@ -1,5 +1,6 @@
-var user = function() {
+var user = function(io) {
     this.deviceData = {};
+    this.events = {};
 };
 
 
