@@ -26,8 +26,8 @@
             "type" : "interval",
             "timeout" : 3000,
             "condition" : {
-              "start-on" : "user.hasSockets()",
-              "stop-on"  : "!user.hasSockets()"
+              "start-on" : "user:hasSockets:true",
+              "stop-on"  : "user:hasSockets:false"
             }
           }
         }
