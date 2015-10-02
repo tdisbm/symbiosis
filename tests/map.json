@@ -1,7 +1,8 @@
 {
   "handshake" : {
-    "entity-identifier" : "type",
-    "entity-room" : "email"
+    "identifier" : "type",
+    "storage" : "name",
+    "room" : "email"
   },
 
   "nodes" : ["device", "user"],

@@ -1,6 +1,6 @@
 {
   "handshake" : {
-    "entity-identifier" : {
+    "identifier" : {
       "constraints": {
         "required": true,
         "unique": {
@@ -11,11 +11,22 @@
         "constructor": "String"
       }
     },
-    "entity-room" : {
+    "room" : {
       "constraints": {
         "required": true,
         "unique": {
           "key" : "handshake"
+        },
+        "not-null": true,
+        "not-empty": true,
+        "constructor": "String"
+      }
+    },
+    "storage" : {
+      "constraints": {
+        "required": true,
+        "unique": {
+          "key": "handshake"
         },
         "not-null": true,
         "not-empty": true,

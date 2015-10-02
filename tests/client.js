@@ -1,6 +1,6 @@
 var io = require("socket.io-client");
 
-socket = io.connect("http://localhost:8000", {query : "type=device&email=user@mail.com"});
+socket = io.connect("http://localhost:8000", {query : "type=device&email=user@mail.com&name=j"});
 
 setInterval(function(){
     socket.emit("put", {"test" : Math.random()});
