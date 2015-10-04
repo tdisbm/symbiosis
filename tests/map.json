@@ -1,35 +1,23 @@
 {
   "handshake" : {
-    "entity-identifier" : "type",
-    "entity-room" : "email"
+    "identifier" : "type",
+    "storage" : "name",
+    "room" : "email"
   },
 
-  "nodes" : {
-    "device" : {
-      "entity" : "/files/device.js",
-      "properties": ["deviceData"]
-    },
-    "user" : {
-      "entity" : "/files/user.js"
-    }
-  },
+  "nodes" : ["device", "user"],
 
-  "environments" : {
-    "device-client" : {
-      "nodes" : ["user", "device"],
-      "streams" : {
-        "device-to-user" : {
-          "to" : ["user"],
-          "properties" : ["deviceData"],
-          "socket-events" : ["message"],
-          "propagation" : {
-            "type" : "interval",
-            "timeout" : 3000,
-            "condition" : {
-              "start-on" : "user:hasSockets:true",
-              "stop-on"  : "user:hasSockets:false"
-            }
-          }
+  "streams" : {
+    "device-to-user" : {
+      "data-to" : ["user"],
+      "data-from" : ["device"],
+      "socket-events" : ["message"],
+      "propagation" : {
+        "type" : "interval",
+        "timeout" : 3000,
+        "condition" : {
+          "start-on" : "user:hasSockets:true",
+          "stop-on"  : "user:hasSockets:false"
         }
       }
     }

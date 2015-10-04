@@ -1,6 +1,6 @@
 {
   "handshake" : {
-    "entity-identifier" : {
+    "identifier" : {
       "constraints": {
         "required": true,
         "unique": {
@@ -11,11 +11,22 @@
         "constructor": "String"
       }
     },
-    "entity-room" : {
+    "room" : {
       "constraints": {
         "required": true,
         "unique": {
           "key" : "handshake"
+        },
+        "not-null": true,
+        "not-empty": true,
+        "constructor": "String"
+      }
+    },
+    "storage" : {
+      "constraints": {
+        "required": true,
+        "unique": {
+          "key": "handshake"
         },
         "not-null": true,
         "not-empty": true,
@@ -26,111 +37,79 @@
 
   "nodes" : {
     "constraints": {
-      "required" : true
-    },
-    "items": {
-      "entity" : {
-        "constraints": {
-          "required" : true,
-          "unique"  : {
-            "key" : "entity"
-          },
-          "file-path" : true,
-          "not-null" : true,
-          "not-empty" : true,
-          "constructor" : "String"
-        }
-      },
-      "properties" : {
-        "constraints": {
-          "constructor" : "Array",
-          "unique" : true
-        }
-      }
+      "required" : true,
+      "constructor" : "Array",
+      "min-length" : 1
     }
   },
 
-  "environments" : {
-    "constraints": {
-      "required": true
-    },
-    "items": {
-      "nodes" : {
+  "streams" : {
+    "items" : {
+      "constraints": {
+        "required" : true
+      },
+      "data-to" : {
         "constraints": {
           "required" : true,
           "constructor" : "Array",
           "min-length" : 1
         }
       },
-      "streams" : {
-        "items" : {
-          "constraints": {
-            "required" : true
-          },
-          "to" : {
-            "constraints": {
-              "required" : true,
-              "constructor" : "Array",
-              "min-length" : 1
-            }
-          },
-          "properties" : {
-            "constraints": {
-              "constructor" : "Array",
-              "min-length": 1
-            }
-          },
-          "socket-events" : {
-            "constraints": {
-              "required" : true,
-              "constructor": "Array",
-              "min-length": 1
-            }
-          },
-          "propagation" : {
-            "constraints": {
-              "required": true,
-              "constructor": "Object",
-              "max-length": 1,
-              "switch" : {
-                "type" : {
-                  "interval" : {
-                    "timeout" : {
-                      "constraints": {
-                        "required" : true,
-                        "constructor" : "Number"
-                      }
-                    },
-                    "condition" : {
-                      "constraints": {
-                        "required" : true
-                      },
-                      "start-on" : {
-                        "constraints": {
-                          "required" : true,
-                          "constructor" : "String"
-                        }
-                      },
-                      "stop-on" : {
-                        "constraints": {
-                          "required" : true,
-                          "constructor" : "String"
-                        }
-                      }
+      "data-from" : {
+        "constraints": {
+          "constructor" : "Array",
+          "min-length": 1
+        }
+      },
+      "socket-events" : {
+        "constraints": {
+          "required" : true,
+          "constructor": "Array",
+          "min-length": 1
+        }
+      },
+      "propagation" : {
+        "constraints": {
+          "required": true,
+          "constructor": "Object",
+          "max-length": 1,
+          "switch" : {
+            "type" : {
+              "interval" : {
+                "timeout" : {
+                  "constraints": {
+                    "required" : true,
+                    "constructor" : "Number"
+                  }
+                },
+                "condition" : {
+                  "constraints": {
+                    "required" : true
+                  },
+                  "start-on" : {
+                    "constraints": {
+                      "required" : true,
+                      "constructor" : "String"
                     }
                   },
-                  "onchange" : {},
-                  "onset" : {}
+                  "stop-on" : {
+                    "constraints": {
+                      "required" : true,
+                      "constructor" : "String"
+                    }
+                  }
                 }
-              }
-            },
-            "type" : {
-              "constraints": {
-                "required" : true,
-                "constructor" : "String",
-                "admit": ["interval", "onchange", "onset"]
-              }
+              },
+              "onchange" : {},
+              "onset" : {}
             }
+          }
+        },
+        "type" : {
+          "constraints": {
+            "required" : true,
+            "constructor" : "String",
+            "admit": ["interval", "onchange", "onset"]
           }
         }
       }
