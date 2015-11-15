@@ -7,4 +7,7 @@ if (argv.port % 1 !== 0) {
     throw new Error("Invalid port!");
 }
 
+app.on("connect", function(socket){
+});
+
 app.listen(argv.port);

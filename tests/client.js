@@ -6,10 +6,15 @@ socket.on("message", function(data) {
     console.log(data);
 });
 
+socket.on("error", function(data){
+    console.log(data);
+});
+
 if (process.argv[2] === "type=device") {
     console.log("i am device");
     setInterval(function(){
         socket.emit("message", {"test" : Math.random()})
+        socket.emit("set-gpio-mask", {"i am data" : Math.random()})
     }, 2000);
 }
 

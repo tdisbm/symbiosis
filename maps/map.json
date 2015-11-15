@@ -21,5 +21,15 @@
         }
       }
     }
+  },
+  "triggers" : {
+    "gpio" : {
+      "data-to" : ["device"],
+      "data-from" : ["user"],
+      "data-to-one" : {
+        "identifier" : "name"
+      },
+      "socket-events" : ["set-gpio-mask"]
+    }
   }
 }
