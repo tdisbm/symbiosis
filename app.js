@@ -8,6 +8,7 @@ if (argv.port % 1 !== 0) {
 }
 
 app.on("connect", function(socket){
+    console.log(socket.handshake)
 });
 
 app.listen(argv.port);

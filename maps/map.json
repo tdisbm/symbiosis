@@ -1,7 +1,7 @@
 {
   "handshake" : {
     "identifier" : "type",
-    "storage" : "name",
+    "storage" : "storage",
     "room" : "email"
   },
 
@@ -22,14 +22,13 @@
       }
     }
   },
-  "triggers" : {
+
+  "point-to-point" : {
     "gpio" : {
-      "data-to" : ["device"],
-      "data-from" : ["user"],
-      "data-to-one" : {
-        "identifier" : "name"
-      },
-      "socket-events" : ["set-gpio-mask"]
+      "to" : ["device"],
+      "from" : ["user"],
+      "events" : ["set-gpio-mask"],
+      "map-by" : ["identifier", "storage", "room"]
     }
   }
 }

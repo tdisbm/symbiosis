@@ -114,44 +114,5 @@
         }
       }
     }
-  },
-
-  "triggers" : {
-    "items" : {
-      "constraints": {
-        "required" : true
-      },
-      "data-to" : {
-        "constraints": {
-          "required" : true,
-          "constructor" : "Array",
-          "min-length" : 1
-        }
-      },
-      "data-from" : {
-        "constraints": {
-          "constructor" : "Array",
-          "min-length": 1
-        }
-      },
-      "data-to-one" : {
-        "constraints" : {
-          "constructor" : "Object"
-        },
-        "identifier" : {
-          "constraints" : {
-            "required" : true,
-            "constructor" : "String"
-          }
-        }
-      },
-      "socket-events" : {
-        "constraints": {
-          "required" : true,
-          "constructor": "Array",
-          "min-length": 1
-        }
-      }
-    }
   }
 }
