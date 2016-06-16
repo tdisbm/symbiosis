@@ -68,7 +68,7 @@ DataStorage.prototype.validateQuery = function(query) {
     return query.hasOwnProperty(this.symbiosis.handshake["identifier"]) &&
         query.hasOwnProperty(this.symbiosis.handshake["room"]) &&
         query.hasOwnProperty(this.symbiosis.handshake["storage"]) &&
-        this.symbiosis.map.nodes.indexOf(query[this.symbiosis.handshake["identifier"]]) !== -1;
+        this.symbiosis.map.items.indexOf(query[this.symbiosis.handshake["identifier"]]) !== -1;
 };
 
 DataStorage.prototype.name = "dataStorage";

@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "name" : "device",
+      "class" : "tests/TestClass.js",
+      "handshake" : {
+        "parameters" : [
+          {"name" : "name1", "options" : ["required", "identifier"]},
+          {"name" : "name2"}
+        ],
+        "mappers": [
+          {"class" : "tests/TestClass.js"},
+          {"class" : "tests/TestClass.js"}
+        ]
+      }
+    },
+
+    {
+      "name" : "user",
+      "class" : "tests/TestClass.js",
+      "handshake" : {
+        "parameters" : [
+          {"name" : "name1", "options" : ["identifier"]},
+          {"name" : "name2"}
+        ],
+        "mappers": [
+          {"class" : "tests/TestClass.js"}
+        ]
+      }
+    }
+  ]
+}

@@ -54,7 +54,7 @@ RoomStorage.prototype.validateQuery = function(query) {
 
     return query.hasOwnProperty(identifier) &&
         query.hasOwnProperty(room) &&
-        this.symbiosis.map.nodes.indexOf(query[identifier]) !== -1;
+        this.symbiosis.map.items.indexOf(query[identifier]) !== -1;
 };
 
 RoomStorage.prototype.refresh = function(query) {

@@ -1,7 +1,9 @@
 var io = require("socket.io-client");
 var argv = require('yargs').argv;
 
-var socket = io.connect("http://0.0.0.0:" + argv.port, {query : "email=" + argv.email + "&type=" + process.type + "&storage=" + process.storage});
+var socket = io.connect("http://127.0.0.1:" + argv.port, {
+    query : "email=" + argv.email + "&name1=" + argv.type + "&storage=" + argv.storage
+});
 
 socket.on("message", function(data) {
     console.log(data);

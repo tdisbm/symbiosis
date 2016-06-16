@@ -35,7 +35,7 @@
     }
   },
 
-  "nodes" : {
+  "items": {
     "constraints": {
       "required" : true,
       "constructor" : "Array",
