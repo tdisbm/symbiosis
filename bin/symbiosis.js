@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('../lib/Kernel/Symbiosis');
+require('symbiosis');
