@@ -1,5 +1,5 @@
 {
-  "name": "Symbiosis",
+  "name": "symbiosis",
   "version": "2.0.0",
   "private": false,
   "main": "./lib/Kernel/Symbiosis.js",
