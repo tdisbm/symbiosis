@@ -5,8 +5,8 @@
       "class" : "tests/TestClass.js",
       "handshake" : {
         "parameters" : [
-          {"name" : "name1", "options" : ["required", "identifier"]},
-          {"name" : "name2"}
+          {"name" : "type", "options" : ["required", "identifier"]},
+          {"name" : "email"}
         ],
         "mappers": [
           {"class" : "tests/TestClass.js"},
@@ -20,8 +20,8 @@
       "class" : "tests/TestClass.js",
       "handshake" : {
         "parameters" : [
-          {"name" : "name1", "options" : ["identifier"]},
-          {"name" : "name2"}
+          {"name" : "type", "options" : ["identifier"]},
+          {"name" : "email"}
         ],
         "mappers": [
           {"class" : "tests/TestClass.js"}
