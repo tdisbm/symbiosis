@@ -1,6 +1,7 @@
 <h1>Symbiosis 2.0</h1>
 
 * map construction:
+```javascript
     - nodes [Array]:
         {
           "name" : "node name",
@@ -16,7 +17,7 @@
             ]
           }
         }
-
+```
 
 * start io listener:
     command:
