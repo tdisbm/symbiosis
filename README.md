@@ -2,21 +2,20 @@
 
 * map construction:
 ```javascript
-    - nodes [Array]:
-        {
-          "name" : "node name",
-          "class" : "path/to/js/class",
-          "handshake" : {
-            "parameters" : [
-              {"name" : "type", "options" : ["required", "identifier"]},
-              {"name" : "email"}
-            ],
-            "mappers": [
-              {"class" : "path/to/js/class"},
-              {"class" : "path/to/js/class"}
-            ]
-          }
-        }
+nodes: {
+  "name" : "node name",
+  "class" : "path/to/js/class",
+  "handshake" : {
+    "parameters" : [
+      {"name" : "type", "options" : ["required", "identifier"]},
+      {"name" : "email"}
+    ],
+    "mappers": [
+      {"class" : "path/to/js/class"},
+      {"class" : "path/to/js/class"}
+    ]
+  }
+}
 ```
 
 * start io listener:
