@@ -1,0 +1,30 @@
+{
+  "nodes": [
+    {
+      "name" : "device",
+      "modules" : [
+        "module/device.js"
+      ],
+      "handshake" : {
+        "parameters" : [
+          {"name" : "type", "options" : ["required", "identifier"]},
+          {"name" : "email", "options" : ["required"]},
+          {"name" : "name", "options" : ["required"]}
+        ]
+      }
+    },
+
+    {
+      "name" : "user",
+      "modules" : [
+        "module/user.js"
+      ],
+      "handshake" : {
+        "parameters" : [
+          {"name" : "type", "options" : ["required", "identifier"]},
+          {"name" : "email", "options" : ["required"]}
+        ]
+      }
+    }
+  ]
+}

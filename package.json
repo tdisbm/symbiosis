@@ -1,13 +1,14 @@
 {
   "name": "symbiosis",
-  "version": "2.0.0",
+  "version": "3.0.0",
+  "description": "socket management environment",
   "private": false,
-  "main": "./lib/Kernel/Symbiosis.js",
+  "main": "./Symbiosis.js",
   "bin": {
     "symbiosis": "./bin/symbiosis.js"
   },
   "dependencies": {
-    "socket.io": "1.4.5"
+    "lodash": "^4.16.1",
+    "socket.io": "^1.4.8"
   }
 }
-
