@@ -1,6 +1,6 @@
 var io = require("socket.io-client");
 var argv = require('yargs').argv;
-var map = require('./map/Map');
+var map = require('../lib/map/Map');
 
 map.load([
     './map/map.json'
